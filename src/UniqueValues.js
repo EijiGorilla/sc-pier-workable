@@ -4,6 +4,7 @@ import SimpleFillSymbol from "@arcgis/core/symbols/SimpleFillSymbol";
 import Extent from "@arcgis/core/geometry/Extent";
 
 export const contractPackageNamesList = [
+  "All",
   "S-01",
   "S-02",
   "S-03a",

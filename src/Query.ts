@@ -116,7 +116,7 @@ export async function calculateWorkablePiers(contractp: any, component: any) {
   });
 
   const query = pileCapLayer.createQuery();
-  const queryCP = "CP = '" + contractp + "'";
+  const queryCP = contractp === "All" ? "1=1" : "CP = '" + contractp + "'";
   query.where = queryCP;
   query.outStatistics = [
     total_count,
@@ -159,8 +159,8 @@ export async function calculateWorkablePiers(contractp: any, component: any) {
 
 // Filter Pile CAP by CP
 export function filterPileCapByCP(cp: any) {
-  const query_cp = "CP = '" + cp + "'";
-  const query_cp2 = "GroupId = '" + cp + "'";
+  const query_cp = cp === "All" ? "1=1" : "CP = '" + cp + "'";
+  const query_cp2 = cp === "All" ? "1=1" : "GroupId = '" + cp + "'";
   pileCapLayer.definitionExpression = query_cp;
   pileCapLayer_overview.definitionExpression = query_cp;
 
